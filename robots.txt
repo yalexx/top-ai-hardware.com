@@ -2,3 +2,36 @@ User-agent: *
 Allow: /
 
 Sitemap: https://top-ai-hardware.com/sitemap.xml
+
+# AI Agent Discovery
+# See https://llmstxt.org for the llms.txt standard
+# llm.txt: https://top-ai-hardware.com/llm.txt
+# llms.txt: https://top-ai-hardware.com/llms.txt
+# llms-full.txt: https://top-ai-hardware.com/llms-full.txt
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /

@@ -1,0 +1,3 @@
+Contact: mailto:yanko@idrobots.com
+Preferred-Languages: en
+Canonical: https://top-ai-hardware.com/.well-known/security.txt

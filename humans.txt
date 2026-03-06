@@ -1,0 +1,9 @@
+/* TEAM */
+Site: Top AI Hardware
+Contact: yanko@idrobots.com
+Location: Sofia, Bulgaria
+
+/* SITE */
+Standards: HTML5, CSS3
+Software: GitHub Pages
+Language: English
