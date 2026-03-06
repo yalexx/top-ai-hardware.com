@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://top-ai-hardware.com/sitemap.xml
