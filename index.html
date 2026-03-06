@@ -67,6 +67,19 @@ h2.section-title{font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;}
 .faq-item h3{font-size:1rem;font-weight:600;margin-bottom:.5rem;color:var(--accent);}
 .faq-item p{font-size:.9rem;color:var(--muted);}
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.85rem;}
+
+/* Redirect Popup */
+.popup-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,15,26,0.85);z-index:9999;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;backdrop-filter:blur(4px)}
+.popup-box{background:#16161d;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px 24px;max-width:400px;width:100%;text-align:center;box-shadow:0 24px 48px rgba(0,0,0,0.5)}
+.popup-box h2{color:#fff;font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.popup-box p{color:#8888a0;font-size:.92rem;margin-bottom:6px}
+.popup-box .timer{color:#ff6b35;font-size:.85rem;margin-bottom:20px}
+.popup-box .popup-btns{display:flex;flex-direction:column;gap:10px}
+.popup-box .popup-accept{padding:14px;background:linear-gradient(135deg,#ff6b35,#ff3864);color:#fff;text-decoration:none;border-radius:10px;font-weight:600;font-size:1rem;transition:transform .2s}
+.popup-box .popup-accept:hover{transform:scale(1.03)}
+.popup-box .popup-cancel{padding:12px;background:none;color:#6b7280;border:1px solid #374151;border-radius:10px;font-size:.9rem;cursor:pointer;transition:all .2s}
+.popup-box .popup-cancel:hover{color:#9ca3af;border-color:#4b5563}
+
 </style>
 <script type="application/ld+json">
 {
@@ -246,5 +259,37 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;tex
 <footer>
   <p>© 2026 Top AI Hardware · Independent Reviews · <a href="mailto:hello@top-ai-hardware.com">Contact</a></p>
 </footer>
+
+<div class="popup-overlay" id="redirectPopup">
+<div class="popup-box">
+<h2>🚀 Ready to see ClawBox?</h2>
+<p>Visit the official store for full specs, demo video, and secure checkout.</p>
+<p class="timer">Redirecting in <span id="countdown">10</span>s...</p>
+<div class="popup-btns">
+<a href="https://openclawhardware.dev/" class="popup-accept">Yes, take me there →</a>
+<button class="popup-cancel" onclick="closePopup()">No thanks, I'll stay here</button>
+</div>
+</div>
+</div>
+
+<script>
+(function(){
+var shown=false,timer=null,count=10;
+function showPopup(){
+if(shown)return;shown=true;
+document.getElementById('redirectPopup').style.display='flex';
+count=10;document.getElementById('countdown').textContent=count;
+timer=setInterval(function(){
+count--;document.getElementById('countdown').textContent=count;
+if(count<=0){clearInterval(timer);window.location.href='https://openclawhardware.dev/';}
+},1000);
+}
+window.closePopup=function(){clearInterval(timer);document.getElementById('redirectPopup').style.display='none';};
+window.addEventListener('scroll',function(){
+if((window.innerHeight+window.scrollY)>=document.body.offsetHeight-100)showPopup();
+});
+})();
+</script>
+
 </body>
 </html>
